@@ -2,15 +2,29 @@ import logo from './logo.svg';
 import './App.css';
 
 
+function Cinemas (props){
+  return (
+    <div className="container">
+      <h3>Nayok: {props.nayok}</h3>
+      <h3>Nayeka: {props.nayeka}</h3>
+    </div>
+  );
+}
 function App() {
   
-
+let pair = [
+  {nayok:"Sharuk",nayeka:"kajol"},
+  {nayok:"Amir",nayeka:"karisma"},
+  {nayok:"Hrittik",nayeka:"rani"},
+  {nayok:"Salman",nayeka:"prinka"},
+  {nayok:"Ragob",nayeka:"Alia"},
+  {nayok:"sagor",nayeka:"priti"},
+]
   return (
     <div className="App">
-      <Friend name="Khosru" id="120"></Friend>
-      <Friend name="Urmi" id="124"></Friend>
-      <Person name="Fahim" id="126"></Person>
-      
+      {
+        pair.map(p => <Cinemas nayok = {p.nayok} nayeka = {p.nayeka}></Cinemas>)
+      }
     </div>
   );
 }
