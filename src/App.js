@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 
 function Cinemas (props){
@@ -12,21 +13,26 @@ function Cinemas (props){
 }
 function App() {
   
-let pair = [
-  {nayok:"Sharuk",nayeka:"kajol"},
-  {nayok:"Amir",nayeka:"karisma"},
-  {nayok:"Hrittik",nayeka:"rani"},
-  {nayok:"Salman",nayeka:"prinka"},
-  {nayok:"Ragob",nayeka:"Alia"},
-  {nayok:"sagor",nayeka:"priti"},
-]
+
   return (
     <div className="App">
-      {
-        pair.map(p => <Cinemas nayok = {p.nayok} nayeka = {p.nayeka}></Cinemas>)
-      }
+     <Counter></Counter>
+     <Counter></Counter>
+     <Counter></Counter>
     </div>
   );
+}
+function Counter(){
+  const [count, setCount] = useState(0)
+  const increaseFunc = () => setCount(count+1);
+  const decreaseFunc = () => setCount(count-1);
+  return (
+    <div className='container'>
+      <h1>Count: {count}</h1>
+      <button onClick = {increaseFunc}>Increase</button>
+      <button onClick = {decreaseFunc}>Decrease</button>
+    </div>
+  )
 }
 
 function Person(){
